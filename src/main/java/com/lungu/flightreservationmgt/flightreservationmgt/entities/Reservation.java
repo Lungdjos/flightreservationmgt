@@ -1,30 +1,22 @@
 package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "reservation")
-public class Reservation {
+public class Reservation extends AbstractEntity{
     // class attributes
-    private int id;
     private boolean checkedIn;
     private int numberOfBags;
+    @OneToOne
     private Passenger passengerId;
+    @OneToOne
     private Flight flightId;
     private Timestamp created;
 
     // getters and setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public boolean isCheckedIn() {
         return checkedIn;
@@ -66,17 +58,4 @@ public class Reservation {
         this.created = created;
     }
 
-    // to string method
-
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "id=" + id +
-                ", checkedIn=" + checkedIn +
-                ", numberOfBags=" + numberOfBags +
-                ", passengerId=" + passengerId +
-                ", flightId=" + flightId +
-                ", created=" + created +
-                '}';
-    }
 }

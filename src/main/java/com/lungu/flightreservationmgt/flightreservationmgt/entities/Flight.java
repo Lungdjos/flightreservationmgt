@@ -1,16 +1,15 @@
 package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
 @Table(name = "flight")
-public class Flight {
+public class Flight extends AbstractEntity{
     // class attributes
-    private int id;
+
     private String flightNumber;
     private String operatingAirlines;
     private String departureCity;
@@ -19,15 +18,6 @@ public class Flight {
     private Timestamp estimatedDepartureTime;
 
     // setters and getters
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getFlightNumber() {
         return flightNumber;
@@ -77,18 +67,4 @@ public class Flight {
         this.estimatedDepartureTime = estimatedDepartureTime;
     }
 
-    // to string method
-
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "id=" + id +
-                ", flightNumber='" + flightNumber + '\'' +
-                ", operatingAirlines='" + operatingAirlines + '\'' +
-                ", departureCity='" + departureCity + '\'' +
-                ", arrivalCity='" + arrivalCity + '\'' +
-                ", dateOfDeparture=" + dateOfDeparture +
-                ", estimatedDepartureTime=" + estimatedDepartureTime +
-                '}';
-    }
 }

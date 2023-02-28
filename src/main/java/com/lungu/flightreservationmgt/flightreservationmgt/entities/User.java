@@ -1,30 +1,18 @@
 package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User extends AbstractEntity{
     // class attributes
-    @Id
-    private int id;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
 
     // getters and setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -58,16 +46,4 @@ public class User {
         this.password = password;
     }
 
-    // to string method
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }
