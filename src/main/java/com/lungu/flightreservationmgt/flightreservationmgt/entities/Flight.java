@@ -9,7 +9,6 @@ import java.util.Date;
 @Table(name = "flight")
 public class Flight extends AbstractEntity{
     // class attributes
-
     private String flightNumber;
     private String operatingAirlines;
     private String departureCity;

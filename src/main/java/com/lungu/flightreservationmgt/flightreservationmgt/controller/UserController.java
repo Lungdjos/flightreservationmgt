@@ -9,4 +9,9 @@ public class UserController {
     public String showRegistrationPage(){
         return "login/userRegistration";
     }
+
+    @RequestMapping
+    public String registerUser(){
+        return "";
+    }
 }
