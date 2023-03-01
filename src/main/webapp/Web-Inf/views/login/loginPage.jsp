@@ -19,7 +19,7 @@
 </head>
 <body
     <h2>Login Page</h2>
-    <form action="registerUser" method="post">
+    <form action="loginValidation" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Username</label>
           <input type="text" name="username" value="" class="form-control" id="" aria-describedby="emailHelp" placeholder="username" required>
