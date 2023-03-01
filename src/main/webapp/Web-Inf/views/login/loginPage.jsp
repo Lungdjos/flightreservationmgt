@@ -21,14 +21,13 @@
     <h2>Login Page</h2>
     <form action="loginValidation" method="post">
         <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
-          <input type="text" name="username" value="" class="form-control" id="" aria-describedby="emailHelp" placeholder="username" required>
+          <label for="Username">Username:</label>
+          <input type="text" name="username" value="" class="form-control" id="" placeholder="Username" required>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="Password">Password:</label>
           <input type="password" name="password" value="" class="form-control" id="" placeholder="Password" required>
         </div>
-
         <button type="submit" value="login" class="btn btn-primary">Login</button>
         ${msg}
       </form>

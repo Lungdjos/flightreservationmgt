@@ -19,17 +19,21 @@
 </head>
 <body
     <h2>Find Flights</h2>
-    <form action="loginValidation" method="post">
+    <form action="availableFlights" method="post">
         <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
-          <input type="text" name="username" value="" class="form-control" id="" aria-describedby="emailHelp" placeholder="username" required>
+          <label for="from">From:</label>
+          <input type="text" name="from" value="" class="form-control" id="" placeholder="From" required>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" name="password" value="" class="form-control" id="" placeholder="Password" required>
+          <label for="to">To:</label>
+          <input type="text" name="to" value="" class="form-control" id="" placeholder="To" required>
+        </div>
+        <div class="form-group">
+          <label for="from">Departure Date:</label>
+          <input type="date" name="departureDate" value="" class="form-control" id="" placeholder="Departure Date" required>
         </div>
 
-        <button type="submit" value="login" class="btn btn-primary">Login</button>
+        <button type="submit" value="search" class="btn btn-primary">Search</button>
       </form>
 </body>
 </html>
