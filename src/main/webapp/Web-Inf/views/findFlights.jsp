@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" charset="UTF-8">
-    <title>User Login</title>
+    <title>Find Flights</title>
     <!-- css link bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body
-    <h2>Login Page</h2>
+    <h2>Find Flights</h2>
     <form action="loginValidation" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Username</label>
@@ -30,7 +30,6 @@
         </div>
 
         <button type="submit" value="login" class="btn btn-primary">Login</button>
-        ${msg}
       </form>
 </body>
 </html>
