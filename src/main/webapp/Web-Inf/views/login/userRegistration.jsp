@@ -43,5 +43,6 @@
         </div>
         <button type="submit" value="register" class="btn btn-primary">Register User</button>
       </form>
+      <p>Already have an account?<a href="login">Login</a></p>
 </body>
 </html>

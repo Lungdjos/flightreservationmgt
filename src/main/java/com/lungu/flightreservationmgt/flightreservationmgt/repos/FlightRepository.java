@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface FlightRepository extends JpaRepository<Flight, Integer> {
     // using the JPQL query to pull data from the database
-    @Query("from Flight where departureCity = :departureCity, arrivalCity = :arrivalCity, dateOfDeparture = :dateOfDeparture")
+    @Query("from Flight where departureCity = :departureCity and arrivalCity = :arrivalCity and dateOfDeparture = :dateOfDeparture")
     // mapping the parameters to the names in the query
     List<Flight> findFlights(@Param("departureCity") String from, @Param("arrivalCity") String to, @Param("dateOfDeparture") Date departureDate);
 }

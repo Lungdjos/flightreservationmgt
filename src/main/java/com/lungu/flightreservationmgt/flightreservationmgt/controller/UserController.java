@@ -28,6 +28,9 @@ public class UserController {
         userRepository.save(user);
         return "login/loginPage";
     }
+    // method to show the login page
+    @RequestMapping("/login")
+    public String login(){return "login/loginPage";}
 
     // the method that display after successful login
     @RequestMapping(value = "/loginValidation", method = RequestMethod.POST)
