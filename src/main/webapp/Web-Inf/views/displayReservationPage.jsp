@@ -27,7 +27,7 @@
     <p>Airlines:    ${flight.operatingAirlines}</p>
     <hr>
 
-    <form action="displayReservationPage" method="post">
+    <form action="completeReservation" method="post">
         <h2>Passenger Details:</h2>
         <div class="form-group">
           <label for="from">First Name:</label>
