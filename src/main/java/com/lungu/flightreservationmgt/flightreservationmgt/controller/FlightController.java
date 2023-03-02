@@ -20,7 +20,7 @@ public class FlightController {
 
     @RequestMapping("/availableFlights")
     public String findFlights(@RequestParam("from") String from, @RequestParam("to") String to,
-                              @RequestParam("departureDate") @DateTimeFormat(pattern = "dd-mm-yyyy") Date departureDate, ModelMap modelMap){
+                              @RequestParam("departureDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date departureDate, ModelMap modelMap){
         List<Flight> flights = flightRepository.findFlights(from, to, departureDate);
         modelMap.addAttribute("flights", flights);
         return "displayFlights";
