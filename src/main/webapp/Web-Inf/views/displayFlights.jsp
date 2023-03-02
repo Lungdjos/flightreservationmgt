@@ -20,6 +20,7 @@
 <body
     <h2>Availabe Flights</h2>
     <br>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -37,7 +38,7 @@
                     <td>${flight.departureCity}</td>
                     <td>${flight.arrivalCity}</td>
                     <td>${flight.estimatedDepartureTime}</td>
-                    <td><a href="showCompleteReservation?flightId=${flight.id}"><i class="bi bi-check2-circle"></i></a></td>
+                    <td><a href="showCompleteReservation?flightId=${flight.id}"><i class="bi bi-check2-circle">Select</i></a></td>
                 </tr>
             </c:forEach>
         </tbody>
