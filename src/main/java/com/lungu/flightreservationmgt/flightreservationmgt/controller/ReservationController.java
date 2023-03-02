@@ -4,6 +4,7 @@ import com.lungu.flightreservationmgt.flightreservationmgt.dto.ReservationReques
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Flight;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.FlightRepository;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.ReservationRepository;
+import com.lungu.flightreservationmgt.flightreservationmgt.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,6 +19,8 @@ public class ReservationController {
     private ReservationRepository reservationRepository;
     @Autowired
     private FlightRepository flightRepository;
+    @Autowired
+    private ReservationService reservationService;
 
     @RequestMapping("/showCompleteReservation")
     public String showCompleteReservation(@RequestParam(value = "flightId") int flightId, ModelMap modelMap){
