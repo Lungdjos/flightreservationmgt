@@ -40,7 +40,6 @@
                     <td><a href="showCompleteReservation?flightId=${flight.id}"><i class="bi bi-check2-circle"></i></a></td>
                 </tr>
             </c:forEach>
-
         </tbody>
     </table>
 </body>
