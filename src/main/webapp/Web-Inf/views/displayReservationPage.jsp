@@ -69,6 +69,6 @@
             <!-- <label for="from">Three Digit Security Code:</label> -->
             <input type="hidden" name="flightId" value="${flight.id}" class="form-control" id="">
           </div>
-        <button type="submit" value="confirm" class="btn btn-primary">Search</button>
+        <button type="submit" value="confirm" class="btn btn-primary">Confirm Reservation</button>
       </form>
 </body>
