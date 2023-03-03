@@ -24,7 +24,7 @@
                     <h3 class="text-center my-4">Create your account</h3>
                     <form action="registerUser" method="post">
                         <div class="row mb-3 ">
-                        <label for="exampleInputEmail1">Full name</label>
+                        <label for="firstName">Full name</label>
                             <div class="col">
                                 <input type="text" name="firstName" value="" class="form-control" id="" placeholder="First name" required>
                             </div>
@@ -33,19 +33,19 @@
                             </div>
                         </div>
                         <div class="form-group mb-3">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" name="email" value="" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email" required>
+                          <label for="email">Email address</label>
+                          <input type="email" name="email" value="" class="form-control" id="" placeholder="Enter email" required>
                         </div>
                         <div class="form-group mb-3">
-                          <label for="exampleInputPassword1">Password</label>
+                          <label for="password">Password</label>
                           <input type="password" name="password" value="" class="form-control" id="" placeholder="Password" required>
                           <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone else.</small>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
+                        <div class="form-group mb-3">
+                          <label for="confirmPassword">Password</label>
                           <input type="password" name="confirmPassword" value="" class="form-control" id="" placeholder="Confirm Password" required>
                         </div>
-                        <button type="submit" value="register" class="btn btn-primary w-100 my-3  ">Register User</button>
+                        <button type="submit" value="register" class="btn btn-primary w-100 my-3">Register User</button>
                     </form>
                     <p>Already have an account?<a href="login"> Login</a></p>
                 </div>
