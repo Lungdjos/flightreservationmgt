@@ -71,3 +71,4 @@
         <button type="submit" value="confirm" class="btn btn-primary">Confirm Reservation</button>
       </form>
 </body>
+</html>
