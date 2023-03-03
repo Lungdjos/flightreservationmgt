@@ -17,8 +17,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body
-    <h2>Availabe Flights</h2>
+<body class="m-5">
+    <h2 class="my-4">Availabe Flights</h2>
     <br>
 
     <table class="table">

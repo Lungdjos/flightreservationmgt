@@ -16,12 +16,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body
-    <div class="row mt-5">
-        <div class="col-md-4">
+<body>
+    <div class="row mt-5 align-items-center justify-content-center">
+        <div class="col-md-4 m-3">
             <div class="card shadow border-0">
                 <div class="card-body">
-                    <h3 class="text-center my-4">Login Page</h3>
+                    <h4 class="text-center my-4">Login your account</h4>
                     <form action="loginValidation" method="post">
                         <div class="form-group mb-3">
                           <label for="Username">Username:</label>
@@ -38,7 +38,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 </html>

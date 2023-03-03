@@ -9,7 +9,9 @@ import com.lungu.flightreservationmgt.flightreservationmgt.repos.PassengerReposi
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.ReservationRepository;
 import com.lungu.flightreservationmgt.flightreservationmgt.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ReservationServiceImpl implements ReservationService {
 
     @Autowired

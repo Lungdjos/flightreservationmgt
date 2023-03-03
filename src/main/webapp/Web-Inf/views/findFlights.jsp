@@ -17,23 +17,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body
-    <h2>Find Flights</h2>
-    <form action="availableFlights" method="post">
-        <div class="form-group">
-          <label for="from">From:</label>
-          <input type="text" name="from" value="" class="form-control" id="" placeholder="From" required>
+<body class="m-5">
+    <div class="row mt-5 align-items-center justify-content-center">
+        <div class="col-md-4 m-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                <h2 class="text-center my-4">Find Flights</h2>
+                    <form action="availableFlights" method="post">
+                        <div class="form-group mb-3">
+                          <label for="from">From:</label>
+                          <input type="text" name="from" value="" class="form-control" id="" placeholder="From" required>
+                        </div>
+                        <div class="form-group mb-3">
+                          <label for="to">To:</label>
+                          <input type="text" name="to" value="" class="form-control" id="" placeholder="To" required>
+                        </div>
+                        <div class="form-group mb-3">
+                          <label for="from">Departure Date:</label>
+                          <input type="date" name="departureDate" value="" class="form-control" id="" placeholder="Departure Date" required>
+                        </div>
+                        <button type="submit" value="search" class="btn btn-primary w-100 my-3">Search</button>
+                  </form>
+              </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="to">To:</label>
-          <input type="text" name="to" value="" class="form-control" id="" placeholder="To" required>
-        </div>
-        <div class="form-group">
-          <label for="from">Departure Date:</label>
-          <input type="date" name="departureDate" value="" class="form-control" id="" placeholder="Departure Date" required>
-        </div>
-
-        <button type="submit" value="search" class="btn btn-primary">Search</button>
-      </form>
+    </div>
 </body>
 </html>

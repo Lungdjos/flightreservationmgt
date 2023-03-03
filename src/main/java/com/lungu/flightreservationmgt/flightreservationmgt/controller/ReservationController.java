@@ -2,6 +2,7 @@ package com.lungu.flightreservationmgt.flightreservationmgt.controller;
 
 import com.lungu.flightreservationmgt.flightreservationmgt.dto.ReservationRequest;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Flight;
+import com.lungu.flightreservationmgt.flightreservationmgt.entities.Reservation;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.FlightRepository;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.ReservationRepository;
 import com.lungu.flightreservationmgt.flightreservationmgt.service.ReservationService;
@@ -29,7 +30,10 @@ public class ReservationController {
         return "displayReservationPage";
     }
     @RequestMapping(value = "/completeReservation", method = RequestMethod.POST)
-    public String completeReservation(ReservationRequest reservationRequest){
-        return "";
+    public String completeReservation(ReservationRequest reservationRequest, ModelMap modelMap){
+        Reservation reservation = reservationService.bookFlight(reservationRequest);
+        modelMap.addAttribute("msg", "Reservation created successfully! The reservation id is: "+
+                reservation.getId());
+        return "confirmReservation";
     }
 }

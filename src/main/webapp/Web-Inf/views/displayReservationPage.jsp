@@ -17,55 +17,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <h1>Complete Reservation</h1>
+<body class="m-5">
+    <h1 class="my-4">Complete Reservation</h1>
 
-    <h2>Flight Details</h2>
-    <p>Airlines:    ${flight.operatingAirlines}</p>
-    <p>From:        ${flight.departureCity}</p>
-    <p>To:          ${flight.arrivalCity}</p>
-    <p>Airlines:    ${flight.operatingAirlines}</p>
+    <h2 class="my-4">Flight Details</h2>
+    <p><label>Airlines:</label>    ${flight.operatingAirlines}</p>
+    <p><label>From:</label>        ${flight.departureCity}</p>
+    <p><label>To:</label>          ${flight.arrivalCity}</p>
+    <p><label>Airlines:</label>    ${flight.operatingAirlines}</p>
     <hr>
 
     <form action="completeReservation" method="post">
-        <h2>Passenger Details:</h2>
-        <div class="form-group">
+        <h2 class="my-4">Passenger Details:</h2>
+        <div class="form-group mb-3">
           <label for="from">First Name:</label>
           <input type="text" name="passengerFirstName" value="" class="form-control" id="" placeholder="First Name" required>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="to">Last Name:</label>
           <input type="text" name="passengerLastName" value="" class="form-control" id="" placeholder="Last Name" required>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="from">Email:</label>
           <input type="email" name="passengerEmail" value="" class="form-control" id="" placeholder="Email Address" required>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="from">Phone:</label>
           <input type="text" name="passengerPhone" value="" class="form-control" id="" placeholder="Phone" required>
         </div>
         <hr>
 
-        <h2>Card Details:</h2>
-        <div class="form-group">
+        <h2 class="my-4">Card Details:</h2>
+        <div class="form-group mb-3">
             <label for="from">Name on Card:</label>
             <input type="text" name="nameOnCard" value="" class="form-control" id="" placeholder="Name on the Card" >
           </div>
-          <div class="form-group">
+          <div class="form-group mb-3">
             <label for="to">Card No.:</label>
             <input type="text" name="cardNumber" value="" class="form-control" id="" placeholder="Card Number" >
           </div>
-          <div class="form-group">
+          <div class="form-group mb-3">
             <label for="from">Expiry Date:</label>
             <input type="date" name="expiryDate" value="" class="form-control" id="" placeholder="Expiry Date" >
           </div>
-          <div class="form-group">
+          <div class="form-group mb-3">
             <label for="from">Three Digit Security Code:</label>
             <input type="text" name="securityCode" value="" class="form-control" id="" placeholder="Three Digit Security Code" >
           </div>
-
-          <div class="form-group">
+          <div class="form-group mb-3">
             <!-- <label for="from">Three Digit Security Code:</label> -->
             <input type="hidden" name="flightId" value="${flight.id}" class="form-control" id="">
           </div>
