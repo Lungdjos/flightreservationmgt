@@ -15,7 +15,7 @@ public class ReservationRequest {
     // card details
     private String nameOnCard;
     private String cardNumber;
-    private Date expiryDate;
+    private String expiryDate;
     private String securityCode;
 
     // getters and setters
@@ -77,11 +77,11 @@ public class ReservationRequest {
         this.cardNumber = cardNumber;
     }
 
-    public Date getExpiryDate() {
+    public String getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(Date expiryDate) {
+    public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
 

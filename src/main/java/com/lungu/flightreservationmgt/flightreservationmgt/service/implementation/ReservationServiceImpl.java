@@ -23,10 +23,6 @@ public class ReservationServiceImpl implements ReservationService {
     @Autowired
     private ReservationRepository reservationRepository;
 
-    // the passenger obj
-    private Passenger passenger;
-    private Reservation reservation;
-
     // the book flight method
     @Override
     public Reservation bookFlight(ReservationRequest reservationRequest) {
@@ -36,6 +32,8 @@ public class ReservationServiceImpl implements ReservationService {
         // retrieving a flight
         Flight flight = flightRepository.findById(reservationRequest.getFlightId()).orElseThrow();
 
+        // the passenger obj
+        Passenger passenger = new Passenger();
         // creating the passenger
         passenger.setFirstName(reservationRequest.getPassengerFirstName());
         passenger.setLastName(reservationRequest.getPassengerLastName());
@@ -44,6 +42,8 @@ public class ReservationServiceImpl implements ReservationService {
         // saving the passenger to the database
         Passenger savedPassenger = passengerRepository.save(passenger);
 
+
+        Reservation reservation = new Reservation();
         // creating a reservation
         reservation.setFlightId(flight);
         reservation.setPassengerId(passenger);

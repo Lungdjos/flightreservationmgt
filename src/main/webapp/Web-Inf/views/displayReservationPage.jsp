@@ -58,7 +58,7 @@
           </div>
           <div class="form-group mb-3">
             <label for="from">Expiry Date:</label>
-            <input type="date" name="expiryDate" value="" class="form-control" id="" placeholder="Expiry Date" >
+            <input type="text" name="expiryDate" value="" class="form-control" id="" placeholder="Expiry Date" >
           </div>
           <div class="form-group mb-3">
             <label for="from">Three Digit Security Code:</label>
