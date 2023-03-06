@@ -11,9 +11,9 @@ public class Reservation extends AbstractEntity{
     private boolean checkedIn;
     private int numberOfBags;
     @OneToOne
-    private Passenger passengerId;
+    private Passenger passenger;
     @OneToOne
-    private Flight flightId;
+    private Flight flight;
     private Timestamp created;
 
     // getters and setters
@@ -34,20 +34,20 @@ public class Reservation extends AbstractEntity{
         this.numberOfBags = numberOfBags;
     }
 
-    public Passenger getPassengerId() {
-        return passengerId;
+    public Passenger getPassenger() {
+        return passenger;
     }
 
-    public void setPassengerId(Passenger passengerId) {
-        this.passengerId = passengerId;
+    public void setPassenger(Passenger passenger) {
+        this.passenger = passenger;
     }
 
-    public Flight getFlightId() {
-        return flightId;
+    public Flight getFlight() {
+        return flight;
     }
 
-    public void setFlightId(Flight flightId) {
-        this.flightId = flightId;
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
     public Timestamp getCreated() {
