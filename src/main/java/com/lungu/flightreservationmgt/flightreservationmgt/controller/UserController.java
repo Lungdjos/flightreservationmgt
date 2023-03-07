@@ -34,8 +34,11 @@ public class UserController {
 
     // the method that display after successful login
     @RequestMapping(value = "/loginValidation", method = RequestMethod.POST)
-    public String login(@RequestParam("username") String email, @RequestParam("password") String password, ModelMap modelMap){
+    public String login(@RequestParam("username") String email,
+                        @RequestParam("password") String password,
+                        ModelMap modelMap){
         String returnValue; // the return value local variable
+
         User user = userRepository.findByEmail(email);
         // comparing the user inputs with tha data in the database
         if(user.getPassword().equals(password)){

@@ -33,7 +33,7 @@
         <tbody>
             <c:forEach items="${flights}" var="flight">
                 <tr>
-                    <th scope="row">${flight.operatingAirlines}</th>
+                    <td scope="row">${flight.operatingAirlines}</td>
                     <td>${flight.departureCity}</td>
                     <td>${flight.arrivalCity}</td>
                     <td>${flight.estimatedDepartureTime}</td>

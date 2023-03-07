@@ -4,7 +4,6 @@ package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
 public class User extends AbstractEntity{
     // class attributes
     private String firstName;

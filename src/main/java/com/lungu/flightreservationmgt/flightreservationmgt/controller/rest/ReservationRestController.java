@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReservationRestController {
     @Autowired
     private ReservationRepository reservationRepository;
-    @RequestMapping("/reservation/{id}")
+    @RequestMapping("/reservations/{id}")
     public Reservation findReservation(@PathVariable("id") int id){
         return reservationRepository.findById(id).orElseThrow();
     }

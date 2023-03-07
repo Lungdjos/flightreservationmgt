@@ -3,7 +3,6 @@ package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="passenger")
 public class Passenger extends AbstractEntity{
     // class attributes
     private String firstName;

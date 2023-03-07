@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "reservation")
 public class Reservation extends AbstractEntity{
     // class attributes
     private boolean checkedIn;

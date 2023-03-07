@@ -23,7 +23,7 @@
     <p><label>Airlines:</label>    ${flight.operatingAirlines}</p>
     <p><label>From:</label>        ${flight.departureCity}</p>
     <p><label>To:</label>          ${flight.arrivalCity}</p>
-    <p><label>Airlines:</label>    ${flight.operatingAirlines}</p>
+    <p><label>Departure Date:</label>    ${flight.dateOfDeparture}</p>
     <hr>
 
     <form action="completeReservation" method="post">

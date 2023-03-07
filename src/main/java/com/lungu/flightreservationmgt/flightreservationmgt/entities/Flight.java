@@ -6,7 +6,6 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
-@Table(name = "flight")
 public class Flight extends AbstractEntity{
     // class attributes
     private String flightNumber;
