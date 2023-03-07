@@ -1,24 +1,22 @@
-package com.lungu.flightreservationmgt.flightreservationmgt.utils;
+package com.lungu.flightreservationmgt.flightreservationmgt.utils.implementation;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
 import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.PdfFormField;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Reservation;
-import com.lungu.flightreservationmgt.flightreservationmgt.utils.checkbox.CheckboxCellEvent;
+import com.lungu.flightreservationmgt.flightreservationmgt.utils.PDFGeneratorUtil;
 import org.springframework.stereotype.Component;
 
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 @Component
-public class PDFGenerator {
+public class PDFGeneratorImpl implements PDFGeneratorUtil {
     // to create a pdf file
+    @Override
     public void generateItinerary(Reservation reservation, String filePath) throws FileNotFoundException, DocumentException {
         Document document = new Document();
 
