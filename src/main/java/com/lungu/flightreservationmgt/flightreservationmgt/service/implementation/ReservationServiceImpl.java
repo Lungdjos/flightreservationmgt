@@ -1,5 +1,6 @@
 package com.lungu.flightreservationmgt.flightreservationmgt.service.implementation;
 
+import com.itextpdf.text.DocumentException;
 import com.lungu.flightreservationmgt.flightreservationmgt.dto.ReservationRequest;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Flight;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Passenger;
@@ -8,8 +9,13 @@ import com.lungu.flightreservationmgt.flightreservationmgt.repos.FlightRepositor
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.PassengerRepository;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.ReservationRepository;
 import com.lungu.flightreservationmgt.flightreservationmgt.service.ReservationService;
+import com.lungu.flightreservationmgt.flightreservationmgt.utils.EmailUtil;
+import com.lungu.flightreservationmgt.flightreservationmgt.utils.PDFGeneratorUtil;
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.FileNotFoundException;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
@@ -23,9 +29,16 @@ public class ReservationServiceImpl implements ReservationService {
     @Autowired
     private ReservationRepository reservationRepository;
 
+    // injecting the utility classes
+    @Autowired
+    private PDFGeneratorUtil pdfGeneratorUtil;
+
+    @Autowired
+    private EmailUtil emailUtil;
+
     // the book flight method
     @Override
-    public Reservation bookFlight(ReservationRequest reservationRequest) {
+    public Reservation bookFlight(ReservationRequest reservationRequest) throws DocumentException, FileNotFoundException, MessagingException {
         // make payment implementation
         // TODO: implementing payment method via third-party payments
 
@@ -49,6 +62,15 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setPassenger(passenger);
         reservation.setCheckedIn(false);
         // saving the reservation
-        return reservationRepository.save(reservation);
+        Reservation savedReservation = reservationRepository.save(reservation);
+        // creating a file path variable
+        String filePath = "D:/Work_Project/reservationutil/Reservation"+savedReservation.getId()+".pdf";
+
+        // creating the pdf file
+        pdfGeneratorUtil.generateItinerary(savedReservation, filePath);
+
+        // sending a mail
+        emailUtil.sendItinerary(passenger.getEmail(), filePath);
+        return savedReservation;
     }
 }
