@@ -6,4 +6,4 @@ Th project involes the implementation of the:
 3. Front Controllers
 4. Front end
 5. Integration
-6. Utilities
+6. Utilities(email, pdf)
