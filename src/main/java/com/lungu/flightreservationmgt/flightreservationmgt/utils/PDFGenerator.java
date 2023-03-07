@@ -4,10 +4,12 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfFormField;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Reservation;
+import com.lungu.flightreservationmgt.flightreservationmgt.utils.checkbox.CheckboxCellEvent;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -87,8 +89,7 @@ public class PDFGenerator {
 //        PdfFormField checkbox = PdfFormField.createCheckBox(writer);
 //        checkbox.setFieldName("myCheckbox");
 //        tableCell.setCellEvent(new CheckboxCellEvent(checkbox, 10, 10));
-//        createPdfTable.addCell(cell);
-
+//        createPdfTable.addCell(tableCell);
 
         return createPdfTable;
     }
