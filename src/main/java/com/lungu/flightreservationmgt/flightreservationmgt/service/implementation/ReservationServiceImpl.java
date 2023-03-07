@@ -70,7 +70,7 @@ public class ReservationServiceImpl implements ReservationService {
         pdfGeneratorUtil.generateItinerary(savedReservation, filePath);
 
         // sending a mail
-        emailUtil.sendItinerary(passenger.getEmail(), filePath);
+//        emailUtil.sendItinerary(passenger.getEmail(), filePath);
         return savedReservation;
     }
 }
