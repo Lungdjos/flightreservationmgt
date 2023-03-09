@@ -45,4 +45,15 @@ public class User extends AbstractEntity{
         this.password = password;
     }
 
+    // the to string method
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
