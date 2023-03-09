@@ -30,10 +30,11 @@ public class FlightController {
                               @RequestParam("departureDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
                               ModelMap modelMap){
         // creation of a logger
-        LOGGER.info("Inside findFlights() with departure city: {}, destination city: {} and departure date: {} incoming values.", from, to, departureDate);
+        LOGGER.info("Inside findFlights() with from: {}, to: {} and departure date: {} incoming values.", from, to, departureDate);
         // calling the find flights methods
         List<Flight> flights = flightRepository.findFlights(from, to, departureDate);
         modelMap.addAttribute("flights", flights);
+        LOGGER.info("The found flights are "+flights);
         return "displayFlights";
     }
 
