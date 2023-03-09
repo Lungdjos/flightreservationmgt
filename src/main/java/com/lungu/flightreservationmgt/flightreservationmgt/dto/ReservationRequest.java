@@ -92,4 +92,21 @@ public class ReservationRequest {
     public void setSecurityCode(String securityCode) {
         this.securityCode = securityCode;
     }
+
+    // to string method
+
+    @Override
+    public String toString() {
+        return "ReservationRequest{" +
+                "flightId=" + flightId +
+                ", passengerFirstName='" + passengerFirstName + '\'' +
+                ", passengerLastName='" + passengerLastName + '\'' +
+                ", passengerEmail='" + passengerEmail + '\'' +
+                ", passengerPhone='" + passengerPhone + '\'' +
+                ", nameOnCard='" + nameOnCard + '\'' +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", expiryDate='" + expiryDate + '\'' +
+                ", securityCode='" + securityCode + '\'' +
+                '}';
+    }
 }

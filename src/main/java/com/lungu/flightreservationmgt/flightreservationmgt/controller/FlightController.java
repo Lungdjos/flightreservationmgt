@@ -2,6 +2,8 @@ package com.lungu.flightreservationmgt.flightreservationmgt.controller;
 
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Flight;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.FlightRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,10 @@ import java.util.List;
 
 @Controller
 public class FlightController {
+
+
+    // creating the logger instance
+    private static final Logger LOGGER = LoggerFactory.getLogger(FlightController.class);
     // injecting the flight repo
     @Autowired
     private FlightRepository flightRepository;
@@ -23,6 +29,9 @@ public class FlightController {
                               @RequestParam("to") String to,
                               @RequestParam("departureDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
                               ModelMap modelMap){
+        // creation of a logger
+        LOGGER.info("Inside findFlights() with departure city: {}, destination city: {} and departure date: {} incoming values.", from, to, departureDate);
+        // calling the find flights methods
         List<Flight> flights = flightRepository.findFlights(from, to, departureDate);
         modelMap.addAttribute("flights", flights);
         return "displayFlights";

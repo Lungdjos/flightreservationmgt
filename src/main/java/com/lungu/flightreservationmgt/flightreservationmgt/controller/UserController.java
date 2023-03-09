@@ -24,32 +24,42 @@ public class UserController {
     // method that handles the registration page
     @RequestMapping("/showRegistration")
     public String showRegistrationPage(){
+        // creation of a logger
+        LOGGER.info("Inside showRegistrationPage()");
         return "login/userRegistration";
     }
 
     // method to handle saving the registered user
     @RequestMapping(value = "/registerUser", method = RequestMethod.POST)
     public String registerUser(@ModelAttribute("user") User user){
+        // creation of a logger
+        LOGGER.info("Inside registerUser() with {} incoming value", user);
+        // saving the user
         userRepository.save(user);
         return "login/loginPage";
     }
     // method to show the login page
     @RequestMapping("/login")
-    public String login(){return "login/loginPage";}
+    public String login(){
+        // creation of a logger
+        LOGGER.info("Inside login()");
+        return "login/loginPage";}
 
     // the method that display after successful login
     @RequestMapping(value = "/loginValidation", method = RequestMethod.POST)
-    public String login(@RequestParam("username") String email,
+    public String loginValidation(@RequestParam("username") String email,
                         @RequestParam("password") String password,
                         ModelMap modelMap){
+        // creation of a logger
+        LOGGER.info("Inside loginValidation() with email {}, as an incoming value from the user", email);
         String returnValue; // the return value local variable
 
         // implementing the logger levels
-        LOGGER.error("ERROR");
-        LOGGER.warn("WARN");
-        LOGGER.info("INFO");    // with SLF4J ends on this level
-        LOGGER.debug("DEBUG");
-        LOGGER.trace("TRACE");
+//        LOGGER.error("ERROR");
+//        LOGGER.warn("WARN");
+//        LOGGER.info("INFO");    // with SLF4J ends on this level
+//        LOGGER.debug("DEBUG");
+//        LOGGER.trace("TRACE");
 
         User user = userRepository.findByEmail(email);
         // comparing the user inputs with tha data in the database
