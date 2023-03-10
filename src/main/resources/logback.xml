@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-<!--    defining the log file properties-->
-    <property name="LOG_DIR" value="D:/logs/"/>
+<configuration scan="true" debug="false">
+    <springProfile name="staging, production">
+        <include resource="logback-production.xml"/>
+    </springProfile>
+
+    <springProfile name="dev">
+        <include resource="logback-dev.xml"/>
+    </springProfile>
+    <!--    defining the log file properties-->
+    <property name="LOG_DIR" value="D:/Work_Project/reservationutil/logs"/>
     <property name="FILE_PREFIX" value="frightreservationmgt"/>
-<!--    invoking the rolling file appender class-->
+    <!--    invoking the rolling file appender class-->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>
             ${LOG_DIR}/${FILE_PREFIX}.log
         </file>
-<!--        defining the appender log pattern-->
+        <!--        defining the appender log pattern-->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>
                 %d{yyyy-MM-dd HH:mm:ss} - %msg%n
             </Pattern>
         </encoder>
-<!--        defining the rolling policy-->
+        <!--        defining the rolling policy-->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-<!--            file naming pattern-->
-            <fileNamePattern>
-                ${LOG_DIR}/achieved/${FILE_PREFIX}.%d{yyyy-MM-dd HH:mm:ss}.%i
-            </fileNamePattern>
-<!--            timing and size policy of the log file-->
-            <timeBaseFileNamingAndTriggerPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>
-                    15MB
-                </maxFileSize>
-
-            </timeBaseFileNamingAndTriggerPolicy>
+            <fileNamePattern>/logs/myLogFile.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
         </rollingPolicy>
     </appender>
-<!--    defining the root logger-->
-    <root level="info">
+    <!--    trying to fix a bug for a logger: snippet from stackoverflow-->
+    <logger name="com.bosch.cbs.mediator" level="INFO" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="org.apache.activemq.spring" level="WARN" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+    <!--    defining the root logger-->
+    <root level="INFO">
         <appender-ref ref="FILE"/>
     </root>
 </configuration>
