@@ -1,7 +1,6 @@
 package com.lungu.flightreservationmgt.flightreservationmgt.service.implementation;
 
 import com.itextpdf.text.DocumentException;
-import com.lungu.flightreservationmgt.flightreservationmgt.controller.FlightController;
 import com.lungu.flightreservationmgt.flightreservationmgt.dto.ReservationRequest;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Flight;
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.Passenger;

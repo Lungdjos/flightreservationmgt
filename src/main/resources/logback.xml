@@ -8,5 +8,15 @@
         <file>
             ${LOG_DIR}/${FILE_PREFIX}.log
         </file>
+<!--        defining the appender log pattern-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+            </Pattern>
+        </encoder>
+<!--        defining the rolling policy-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+
+        </rollingPolicy>
     </appender>
 </configuration>
