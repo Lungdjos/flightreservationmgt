@@ -16,7 +16,17 @@
         </encoder>
 <!--        defining the rolling policy-->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+<!--            file naming pattern-->
+            <fileNamePattern>
+                ${LOG_DIR}/achieved/${FILE_PREFIX}.%d{yyyy-MM-dd HH:mm:ss}.%i
+            </fileNamePattern>
+<!--            timing and size policy of the log file-->
+            <timeBaseFileNamingAndTriggerPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>
+                    15MB
+                </maxFileSize>
 
+            </timeBaseFileNamingAndTriggerPolicy>
         </rollingPolicy>
     </appender>
 </configuration>
