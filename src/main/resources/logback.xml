@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!--    defining the log file properties-->
+    <property name="LOG_DIR" value="D:/logs/"/>
+    <property name="FILE_PREFIX" value="frightreservationmgt"/>
+<!--    invoking the rolling file appender class-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            ${LOG_DIR}/${FILE_PREFIX}.log
+        </file>
+    </appender>
+</configuration>
