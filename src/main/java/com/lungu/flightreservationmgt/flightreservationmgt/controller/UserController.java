@@ -5,6 +5,7 @@ import com.lungu.flightreservationmgt.flightreservationmgt.repos.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
+    // encryption injection
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     // injecting the user repo
     @Autowired
     private UserRepository userRepository;
@@ -34,6 +38,8 @@ public class UserController {
     public String registerUser(@ModelAttribute("user") User user){
         // creation of a logger
         LOGGER.info("Inside registerUser() with {} incoming value", user);
+        // encoding the user password
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         // saving the user
         userRepository.save(user);
         return "login/loginPage";
