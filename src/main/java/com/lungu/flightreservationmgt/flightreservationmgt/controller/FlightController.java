@@ -38,4 +38,10 @@ public class FlightController {
         return "displayFlights";
     }
 
+    // method to add a flight
+    @RequestMapping("/admin/addFlight")
+    public String showAddFlight(){
+        return "addFlight";
+    }
+
 }
