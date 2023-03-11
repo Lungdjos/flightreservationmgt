@@ -15,12 +15,17 @@ import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
+    // attributes and injections
+    // injecting a configured property
+    @Value("${com.lungu.flightreservationmgt.flightreservationmgt.itinerary.dirpath}")
+    private String ITINERARY_DIR;
 
     @Autowired
     private FlightRepository flightRepository;
@@ -78,7 +83,7 @@ public class ReservationServiceImpl implements ReservationService {
         LOGGER.info("The created reservation "+reservation);
 
         // creating a file path variable
-        String filePath = "D:/Work_Project/reservationutil/Reservation"+savedReservation.getId()+".pdf";
+        String filePath = ITINERARY_DIR+ "Reservation" +savedReservation.getId()+".pdf";
 
         // creating the pdf file
         pdfGeneratorUtil.generateItinerary(savedReservation, filePath);
