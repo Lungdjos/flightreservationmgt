@@ -3,6 +3,8 @@ package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class User extends AbstractEntity{
     // class attributes
@@ -10,6 +12,7 @@ public class User extends AbstractEntity{
     private String lastName;
     private String email;
     private String password;
+    private Set<Role> roles;
 
     // getters and setters
 
@@ -45,7 +48,14 @@ public class User extends AbstractEntity{
         this.password = password;
     }
 
-    // the to string method
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+// the to string method
 
     @Override
     public String toString() {
@@ -54,6 +64,7 @@ public class User extends AbstractEntity{
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", roles=" + roles +
                 '}';
     }
 }
