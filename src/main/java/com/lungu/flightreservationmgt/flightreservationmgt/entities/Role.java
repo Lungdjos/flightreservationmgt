@@ -1,12 +1,14 @@
 package com.lungu.flightreservationmgt.flightreservationmgt.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 
 import java.util.Set;
 
 @Entity
 public class Role extends AbstractEntity{
     private String name;
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
     // setter and getter methods
