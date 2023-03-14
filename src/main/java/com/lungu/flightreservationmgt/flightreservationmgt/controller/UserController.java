@@ -2,6 +2,7 @@ package com.lungu.flightreservationmgt.flightreservationmgt.controller;
 
 import com.lungu.flightreservationmgt.flightreservationmgt.entities.User;
 import com.lungu.flightreservationmgt.flightreservationmgt.repos.UserRepository;
+import com.lungu.flightreservationmgt.flightreservationmgt.service.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class UserController {
     // injecting the user repo
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private SecurityService securityService;
 
     // creating the logger instance
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
@@ -67,9 +70,11 @@ public class UserController {
 //        LOGGER.debug("DEBUG");
 //        LOGGER.trace("TRACE");
 
-        User user = userRepository.findByEmail(email);
+//        User user = userRepository.findByEmail(email);
+        boolean loginResponse = securityService.login(email, password);
         // comparing the user inputs with tha data in the database
-        if(user.getPassword().equals(password)){
+//        if(user.getPassword().equals(password)){
+        if(loginResponse){
             returnValue = "findFlights";
         }else {
             modelMap.addAttribute("msg", "Invalid username or password. Please try again.");
